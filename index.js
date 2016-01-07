@@ -1,34 +1,38 @@
-var _ = require('underscore');
-var Backbone = require('backbone');
-var Marionette = require('backbone.marionette');
-var itemTemplate = require('./item-template');
+//Vendors
+var Backbone,Marionette,_;
 
+//Templates
+var itemTemplate;
+
+//Req vendors
+_ = require('underscore');
+Backbone = require('backbone');
+Marionette = require('backbone.marionette');
 Marionette.$ = require('jquery');
 
-if (window.__agent) {
-  window.__agent.start(Backbone, Marionette);
-}
+//Req templates
+itemTemplate = require('./item-template');
 
-//Item de ng-repeat
-var SingleLink = Marionette.ItemView.extend({
+//ng-item
+var item = Marionette.ItemView.extend({
   tagName: "li",
   template: itemTemplate
 });
 
-//Div que contiene ng-repeat
-var ListView = Marionette.CollectionView.extend({
-  tagName: 'ul',
-  childView: SingleLink
+//ng-wrapper
+var list = Marionette.CollectionView.extend({
+  tagName: "ul",
+  childView: item
 });
 
-//Variable que popula ng-repeat
-var list = new Backbone.Collection([
-  {path: 'http://google.com'},
-  {path: 'http://mojotech.com'},
+//ng-data
+var listCollection = new Backbone.Collection([
+  {path: "www.etermax.com"},
+  {path: "www.preguntados.com"}
 ]);
 
-//Call de ng-repeat
-(new ListView({
-  collection: list,
-  el: '.link-area'
+//ng-call
+(new list({
+  collection: listCollection,
+  el: ".link-area"
 })).render();

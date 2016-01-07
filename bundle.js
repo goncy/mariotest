@@ -1,37 +1,33 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var _ = require('underscore');
-var Backbone = require('backbone');
-var Marionette = require('backbone.marionette');
-var itemTemplate = require('./item-template');
+var Backbone,Marionette,_;
+var itemTemplate;
+
+_ = require('underscore');
+Backbone = require('backbone');
+Marionette = require('backbone.marionette');
 
 Marionette.$ = require('jquery');
 
-if (window.__agent) {
-  window.__agent.start(Backbone, Marionette);
-}
+itemTemplate = require('./item-template');
 
-//Item de ng-repeat
-var SingleLink = Marionette.ItemView.extend({
+var item = Marionette.ItemView.extend({
   tagName: "li",
   template: itemTemplate
 });
 
-//Div que contiene ng-repeat
-var ListView = Marionette.CollectionView.extend({
-  tagName: 'ul',
-  childView: SingleLink
+var list = Marionette.CollectionView.extend({
+  tagName: "ul",
+  childView: item
 });
 
-//Variable que popula ng-repeat
-var list = new Backbone.Collection([
-  {path: 'http://google.com'},
-  {path: 'http://mojotech.com'},
+var listCollection = new Backbone.Collection([
+  {path: "www.etermax.com"},
+  {path: "www.preguntados.com"}
 ]);
 
-//Call de ng-repeat
-(new ListView({
-  collection: list,
-  el: '.link-area'
+(new list({
+  collection: listCollection,
+  el: ".link-area"
 })).render();
 },{"./item-template":2,"backbone":6,"backbone.marionette":3,"jquery":27,"underscore":28}],2:[function(require,module,exports){
 // hbsfy compiled Handlebars template
