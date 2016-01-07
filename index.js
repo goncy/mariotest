@@ -1,8 +1,10 @@
 //Vendors
 var Backbone,Marionette,_;
 
-//Templates
-var itemTemplate;
+var _ = require('underscore');
+var Backbone = require('backbone');
+var Marionette = require('backbone.marionette');
+var itemTemplate = require('./item-template.hbs');
 
 //Req vendors
 _ = require('underscore');
