@@ -1,10 +1,17 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+<<<<<<< HEAD
 var Backbone,Marionette,_;
 var itemTemplate;
 
 _ = require('underscore');
 Backbone = require('backbone');
 Marionette = require('backbone.marionette');
+=======
+var _ = require('underscore');
+var Backbone = require('backbone');
+var Marionette = require('backbone.marionette');
+var itemTemplate = require('./item-template.hbs');
+>>>>>>> 03c51f50c0ce0b158604589a5719db0883e98aea
 
 Marionette.$ = require('jquery');
 
@@ -29,7 +36,8 @@ var listCollection = new Backbone.Collection([
   collection: listCollection,
   el: ".link-area"
 })).render();
-},{"./item-template":2,"backbone":6,"backbone.marionette":3,"jquery":27,"underscore":28}],2:[function(require,module,exports){
+
+},{"./item-template.hbs":2,"backbone":6,"backbone.marionette":3,"jquery":27,"underscore":28}],2:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
