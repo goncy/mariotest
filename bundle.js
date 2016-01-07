@@ -2,7 +2,7 @@
 var _ = require('underscore');
 var Backbone = require('backbone');
 var Marionette = require('backbone.marionette');
-var itemTemplate = require('./item-template');
+var itemTemplate = require('./item-template.hbs');
 
 Marionette.$ = require('jquery');
 
@@ -33,7 +33,8 @@ var list = new Backbone.Collection([
   collection: list,
   el: '.link-area'
 })).render();
-},{"./item-template":2,"backbone":6,"backbone.marionette":3,"jquery":27,"underscore":28}],2:[function(require,module,exports){
+
+},{"./item-template.hbs":2,"backbone":6,"backbone.marionette":3,"jquery":27,"underscore":28}],2:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

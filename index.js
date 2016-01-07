@@ -1,7 +1,7 @@
 var _ = require('underscore');
 var Backbone = require('backbone');
 var Marionette = require('backbone.marionette');
-var itemTemplate = require('./item-template');
+var itemTemplate = require('./item-template.hbs');
 
 Marionette.$ = require('jquery');
 
