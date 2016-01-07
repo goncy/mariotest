@@ -3,5 +3,16 @@
   "version": "0.0.1",
   "devDependencies": {
     "browserify": "^12.0.1"
+  },
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "backbone.marionette": "^2.4.4",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.2",
+    "handlebars": "^4.0.5",
+    "hbsfy": "^2.4.1",
+    "jquery": "^2.1.4",
+    "underscore": "^1.8.3"
   }
 }
