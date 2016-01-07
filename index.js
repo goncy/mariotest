@@ -1,8 +1,9 @@
+var _ = require('underscore');
 var Backbone = require('backbone');
 var Marionette = require('backbone.marionette');
-var Marionette.$ = require('jquery');
-var _ = require('underscore');
 var itemTemplate = require('./item-template');
+
+Marionette.$ = require('jquery');
 
 if (window.__agent) {
   window.__agent.start(Backbone, Marionette);
