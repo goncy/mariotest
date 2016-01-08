@@ -4,11 +4,13 @@ Backbone = require('backbone');
 Marionette = require('backbone.marionette');
 Marionette.$ = require('jquery');
 
-var championList = require('./views/championList'),
+var championPage = require('./views/championPage'),
     champions = require('./api/champions');
 
 //ng-call
-(new championList({
-  collection: champions,
-  el: ".link-area"
-})).render();
+var chp = new championPage({
+  el: "body",
+  collection: champions
+});
+
+chp.render();
